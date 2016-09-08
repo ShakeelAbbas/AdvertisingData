@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chargeback">
+<head>
+<meta charset="utf-8" />
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="img/icons/favicon.png" />
+<title>ChargebackHero</title>
+
+<link rel="stylesheet" href="css/bootstrap-theme.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.css" />
+<link rel="stylesheet" href="css/pikaday.css" />
+<link rel="stylesheet" href="css/application.css" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/bootstrap-modal.css" />
+<link rel="stylesheet" href="css/form-modal.css" />
+<link rel="stylesheet" href="css/prompt-modal.css" />
+<script src="js/moment.js"></script>
+<script src="js/pikaday.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>	
+<script type="text/javascript" src="js/bootstrap-modal-v3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap-modal-cb-extension.js"></script>
+<script type="text/javascript" src="angular/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="angular/lib/angular/angular-messages.js"></script>
+<script type="text/javascript" src="angular/lib/lodash.js"></script>
+<script type="text/javascript" src="angular/lib/angular-ui/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+<script type="text/javascript" src="angular/lib/angular/angular-cookies.min.js"></script>
+<script type="text/javascript" src="angular/lib/angular/restangular.js"></script>
+<script type="text/javascript" src="angular/js/app.js"></script>
+<script type="text/javascript" src="angular/js/directives/directives.js"></script>
+<script type="text/javascript" src="angular/js/services/applicationService.js"></script>
+<script type="text/javascript" src="angular/js/controllers/applicationCtrl.js"></script>
+<script src="js/md5.js"></script>
+<script type="text/javascript">
+	$('.dropdown-toggle').dropdown(); 
+    function readURL(input,id) {
+    if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#'+id)
+                    .attr('src', e.target.result)
+                    .width(68)
+                    .height(68);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<style>
+.dates-input {width:130px;height:30px;padding-left:7px;font-size: small;}
+.header-dropdown{ color: #333 !important;font-weight: bold !important;}
+ button, input, select, textarea {font-family: inherit;line-height: inherit; font-size: inherit;}
+</style>
+</head>
+<body class="animated fadeIn" ng-controller="ManageAccountCtrl">
+	<div id="modal-confirmation" style="display:none;" class="modal inputPrompt companyModal">
+		 <div ng-include="'resources/modal-confirmation.html'"></div>
+	</div>
+	<div id="edit-user" style="display:none;" class="modal inputPrompt companyModal">
+		 <div ng-include="'resources/modal-edituserinfo.html'"></div>
+	</div>
+	<span ng-include="'resources/header.html'"></span>
+	<!--//HEADER-->
+
+		<section class="main nomargin nopadding">
+			<div class="container-custom">	
+					<div class="col-1">
+						<div class="nav-right-full-custom">
+							<!--PANEL-->
+							<div class="panel panel-default-custom" style="width: 95%;margin-left:25px;margin-bottom: 270px;">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Account Information
+										<span class="glyphicon glyphicon-calendar main-panel-calendar" aria-hidden="true" > </span>
+									</h3>
+								</div>
+								<div class="panel-body-custom">
+									<div class="panel-table">
+									
+							<div>
+									<table class="table">
+										
+										<tbody>
+											<tr>
+												<th class="background-white">Company Name</th>	
+												<th class="background-white">Username</th>
+												<th class="background-white">Email Address</th>
+												<th class="background-white">Status</th>	
+												<th class="background-white" style="text-align: right;">Action(s)</th>							
+											</tr>
+											<tr ng-repeat="company in userCompanyList">
+												<td>{{company.name}}</td>
+												<td>{{user.username}}</td>
+												<td>{{user.emailAddress}}</td>
+												<td>{{user.status}}</td>
+												<td ng-if="userObj.admin==true">
+													<a href="#"  class="glyphicon glyphicon-remove main-panel-calendar"  style="color: red;margin-top: 1px;margin-left: 10px;" ng-click="showDeleteConfirmationModal(obj);" data-toggle="tooltip" title="Disable" onmouseenter="$(this).tooltip('show')">
+													<a href="#"  class="glyphicon glyphicon-pencil main-panel-calendar" ng-click="showEditUserModal();"></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+			
+	</section>
+	<!--//FAQ-->
+	
+	<!--FOOTER-->
+	<span ng-include="'resources/footer.html'"></span>
+	<!--//FOOTER-->
+</body>
+</html>

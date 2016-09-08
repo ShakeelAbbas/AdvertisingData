@@ -1,0 +1,56 @@
+<div class="modal-dialog mv-big-modal" style="z-index:100000">
+		<div class="mv-input-modal modal-content">
+			<div class="mv-modal-header modal-header modal-close-cross"> <i data-dismiss="modal" class="glyphicon glyphicon-remove"></i></div>
+			<div class="mv-modal-body modal-body">
+				<div class="mv-body-heading">
+	<h2>Modify Email Address and password</h2>
+				</div>
+				<div class="mv-form-container">
+	<div id="add_user">
+	<style>
+		.companyModal .modal-dialog{width: 780px;}
+		@media (max-width: 740px) {.companyModal .modal-dialog {width: 660px;margin: 30px auto;}}
+	</style>
+	<div style="min-width:465px;" class="right-block">
+	<form  name="editUserForm" noValidate="true" validate-form="true">
+		<div id="inputs_div">		
+			<div class="field-container">
+				<div  style="color:white;margin-left: 2px">Email Address:</div>
+             	<input ng-model="userToEdit.emailAddress" type="text" tabindex="75" required="true" error-message="Email Address is Required" class="input-block-level" data-help-text="Email Address"  name="emailAddress" placeholder="Email Address"  id="emailAddress">
+             	<div message-for="emailAddress" style="margin-top:3px;color:white;margin-left: 2px"/>
+            </div>
+			<div class="field-container">
+				<div  style="color:white;margin-left: 2px">New Password:</div>
+             	<input ng-model="userToEdit.password" type="password" tabindex="75"  class="input-block-level" data-help-text="New Password" maxlength="50" name="password" placeholder="Password..."  id="password">
+             	<div message-for="password" style="margin-top:3px;color:white;margin-left: 2px"/>
+            </div>
+
+            <div class="field-container">
+            	<div  style="color:white;margin-left: 2px">Confirm Password:</div>
+            	<input ng-model="userToEdit.confirmPassword" type="password" tabindex="76"  data-help-text="Confirm Password" class="input-block-level" maxlength="50" name="confirmPassword" placeholder="Confirm Password..."  id="confirmPassword" name="confirmPassword">
+            	<div message-for="confirmPassword" style="margin-top:3px;color:white;margin-left: 2px"/>
+            </div>
+		</div>
+		<button id="editUserTrigger" type="submit" ng-click="editUser(editUserForm.$valid);" style="padding-top:4px;visibility: hidden;"> <span>#{msg['action.save']}</span></button>
+		<div id="messages" ng-if="uiMessage != ''" style="margin-top:3px;color:white;margin-left: 2px">
+			<span ng-bind="uiMessage"></span>						
+        </div>
+	</form>
+	</div>
+	</div>
+				</div>
+			</div>
+			<div class="mv-help-container">
+				<h2>Help</h2>
+				<p class="help-text"></p>
+			</div>
+			<div class="modal-footer mv-modal-footer">
+		<div class="">			
+			<div class="right-footer">
+				<a id="model-close" data-dismiss="modal" class="color-midnight" style="margin-right: 20px;margin-top: 5px;font-weight:300;font-size:1.2rem;text-decoration: none;" href="javascript:void(0);">Cancel</a>
+				<a class="mv-button-blue" style="padding-top:4px;text-decoration: none;font-weight: bold;" id="editUserInfo" href="javascript:void(0);" onclick="$('#editUserTrigger').click()">Save</a>
+			</div>
+		</div>
+			</div>
+		</div>
+	</div>

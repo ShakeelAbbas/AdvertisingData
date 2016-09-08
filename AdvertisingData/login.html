@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chargeback">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/icons/favicon.png" />
+		<title>ChargebackHero</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/login/form-elements.css">
+        <link rel="stylesheet" href="css/login/style.css">
+		<link rel="stylesheet" href="css/application.css">
+		
+		<script type="text/javascript" src="angular/lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="angular/lib/angular/angular-messages.js"></script>
+		<script type="text/javascript" src="angular/lib/lodash.js"></script>
+		<script type="text/javascript" src="angular/lib/angular-ui/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+		<script type="text/javascript" src="angular/lib/angular/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="angular/lib/angular/restangular.js"></script>
+		<script type="text/javascript" src="angular/js/app.js"></script>
+		<script type="text/javascript" src="angular/js/directives/directives.js"></script>
+		<script type="text/javascript" src="angular/js/services/applicationService.js"></script>
+		<script type="text/javascript" src="angular/js/controllers/applicationCtrl.js"></script>
+		<script src="js/md5.js"></script>
+		
+		
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">    	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                          <!--    <h1><strong>ChargebackHero</strong> Login </h1>
+							<div class="description">
+                            	<p>
+	                            	Place your Description Here
+                            	</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="row" ng-controller="LoginCtrl">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3><img alt="" src="img/login-chargeback-logo.png"></h3>
+                            		<p ng-show="!loggedIn">Enter your username and password to log on:</p>
+									<p ng-show="loggedIn">Please Select Company :</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+								<span ng-show="!loggedIn">
+									<form name="loginForm"  id="loginForm" class="login-form">
+										<div class="form-group">
+											<label class="sr-only" for="username">User Name</label>
+											<input ng-model="user.username" required="true"  type="text" name="username" placeholder="Username..." class="form-username form-control" id="username" style="height: 50px;line-height: 50px;font-size: 16px;padding: 0 20px;">
+										</div>
+										<span ng-if="error.blankUsername || loginForm.username.$touched">
+											<div class="note" ng-if="loginForm.username.$error.required">
+												<p style="color:#7AC747"><span class="glyphicon glyphicon-info-sign" style="padding-right:5px"></span>Username is Required</p>
+											</div>
+										</span>
+										<div class="form-group">
+											<label class="sr-only" for="password">Password</label>
+											<input ng-model="user.password" required="true" type="password" name="password" placeholder="Password..." class="form-password form-control" id="password">
+										</div>
+										<span ng-if="error.blankPassword || loginForm.password.$touched">
+											<div class="note" ng-if="loginForm.password.$error.required">
+												<p style="color:#7AC747"><span class="glyphicon glyphicon-info-sign" style="padding-right:5px"></span>Password is Required</p>
+											</div>
+										</span>
+										<span ng-if="uiMessage != ''">
+											<div class="note">
+												<p style="color:#7AC747"><span class="glyphicon glyphicon-info-sign" style="padding-right:5px"></span> {{uiMessage}}</p>
+											</div>
+										</span>
+										
+										<div class="note">
+											<a href="signup.html">Create an Account</a> |
+											<a href="reset-password.html">Forgot password?</a>
+										</div>
+										<button type="submit" class="btn" ng-click="login();">Sign in!</button>
+									</form>
+								</span>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/login/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

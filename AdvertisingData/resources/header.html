@@ -1,0 +1,45 @@
+<header style="height: 50px">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header" style="margin-top: -7px;">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse-header">
+						<span class="sr-only">Toggle navigation</span> 
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand"> 
+						<img src="img/login-chargeback-logo.png" class="hidden-sm img-header" alt="ChargebackHero" title="ChargebackHero" />
+					</a>
+				</div>
+				<div class="navbar-collapse navbar-collapse-header collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="divider hidden-xs"></li>
+						<li>
+							<a href="#" class="white dropdown-toggle-manage dropdown" data-toggle="dropdown">
+								<span class="glyphicon glyphicon-wrench" aria-hidden="true"> </span>
+								<label style="margin-right: 7px; margin-left: 7px;">My Account</label> 
+								<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li ng-if="companyModule.enableCheckRefund"><a href="check-refund.html" class="header-dropdown">Check Refunds</a></li>
+								<li><a href="account-info.html" class="header-dropdown">Account Information</a></li>
+							</ul>
+						</li>
+						<li class="divider hidden-xs"></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown" ng-controller="LogoutCtrl">
+							<a href="#" class="white dropdown-logout-toggle dropdown" data-toggle="dropdown">
+								<span	class="glyphicon glyphicon-off" aria-hidden="true"> </span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a ng-click="logout();" class="header-dropdown">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>

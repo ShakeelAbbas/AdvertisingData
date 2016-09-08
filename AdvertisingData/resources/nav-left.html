@@ -1,0 +1,30 @@
+<div class="col-sm-15">
+	<div class="grid hidden-xs">
+		<ul class="nav nav-stacked faq-nav search-panel" style="padding-top: 12%;">
+			<li class="selected">
+				<a class="search-nav-left">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<span class="search-nav-left-text"> Search</span>
+				 </a>
+			</li>
+		</ul>
+		<ul class="nav nav-stacked faq-nav overall">
+			<li class="selected"><a><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Overall </a></li>
+			<li ng-repeat="(key, value) in SideBarCurrentMonthCBList">
+				<a class="border-bottom-left-panel">{{key}}<label  class="white-float-right">{{value}}</label></a>
+			</li>						
+		</ul>						
+		<ul class="nav nav-stacked faq-nav pending">
+			<li class="selected"><a><span class="glyphicon glyphicon-time" aria-hidden="true"> </span> Pending Bank Reply </a></li>
+			<li ng-repeat="(key, value) in SideBarPendingCBList">
+				<a class="border-bottom-left-panel">{{key}}<label  class="white-float-right">{{value}}</label></a>
+			</li>
+		</ul>
+		<ul class="nav nav-stacked faq-nav complete">
+			<li class="selected"><a><span class="glyphicon glyphicon-ok-circle" aria-hidden="true">	</span> Completed </a></li>
+			<li ng-repeat="(key, value) in SideBarCompletedCBList">
+				<a class="border-bottom-left-panel">{{key}}<label  class="white-float-right">{{value}}</label></a>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+<div class="modal-dialog mv-big-modal" style="z-index:100000">
+		<div class="mv-input-modal modal-content">
+			<div class="mv-modal-header modal-header modal-close-cross"> <i data-dismiss="modal" class="glyphicon glyphicon-remove"></i></div>
+			<div class="mv-modal-body modal-body">
+				<div class="mv-body-heading">
+	<h2>Company Campaign Settings</h2>
+				</div>
+				<div class="mv-form-container">
+	<div id="add_user">
+	<style>
+		.companyModal .modal-dialog{width: 780px;}
+		@media (max-width: 740px) {.companyModal .modal-dialog {width: 660px;margin: 30px auto;}}
+	</style>
+	<div style="min-width:465px;" class="right-block">
+	<form  name="campaignSettingsForm" noValidate="true" validate-form="true">
+		<div id="inputs_div">
+			<div class="field-container">
+				<div  style="color:white;margin-left: 2px">Spend Threshold:</div>
+				<input type="number"  string-to-number tabindex="82" class="input-block-level" ng-model="companyInfoObj.spendThreshold" required="true" error-message="Spend Threshold is Required"  title="Spend Threshold" placeholder="Spend Threshold"  data-help-text="This is Campiagn Spend Threshold for Company" autofocus="autofocus" id="spendThreshold" name="spendThreshold">
+				<div message-for="spendThreshold" style="margin-top:3px;color:white;margin-left: 2px"/>	
+				<div ng-show="campaignSettingsForm.spendThreshold.$error.number" style="margin-top:3px;color:white;margin-left: 2px">Not a Valid Number</div>				 
+			</div>	
+			<div class="field-container">
+				<div  style="color:white;margin-left: 2px">Click Differential Percent:</div>
+				<input type="number" string-to-number tabindex="83" class="input-block-level" ng-model="companyInfoObj.clickDifferentialPercent" required="true" error-message="Click Differential Percent is Required"  title="Click Differential Percent" placeholder="Click Differential Percent"  data-help-text="This is Campaign Click Differential Percent for Company" autofocus="autofocus" id="clickDifferentialPercent" name="clickDifferentialPercent">
+				<div message-for="clickDifferentialPercent" style="margin-top:3px;color:white;margin-left: 2px"/>	
+				<div ng-show="campaignSettingsForm.clickDifferentialPercent.$error.number" style="margin-top:3px;color:white;margin-left: 2px">Not a Valid Number</div>				 
+			</div>
+		</div>
+		<button id="campaignSettingsTrigger" type="submit" ng-click="saveCampaignSettings(campaignSettingsForm.$valid);" style="padding-top:4px;visibility: hidden;"> <span>#{msg['action.save']}</span></button>
+		<div id="messages" ng-if="uiMessage != ''" style="margin-top:3px;color:white;margin-left: 2px">
+			<span ng-bind="uiMessage"></span>						
+        </div>
+	</form>
+	</div>
+	</div>
+				</div>
+			</div>
+			<div class="mv-help-container">
+				<h2>Help</h2>
+				<p class="help-text"></p>
+			</div>
+			<div class="modal-footer mv-modal-footer">
+		<div class="">			
+			<div class="right-footer">
+				<a id="model-close" data-dismiss="modal" class="color-midnight" style="margin-right: 20px;margin-top: 5px;font-weight:300;font-size:1.2rem;text-decoration: none;" href="javascript:void(0);">Cancel</a>
+				<a class="mv-button-blue" style="padding-top:4px;text-decoration: none;font-weight: bold;" id="campaignSettingsInfo" href="javascript:void(0);" onclick="$('#campaignSettingsTrigger').click()">Save</a>
+			</div>
+		</div>
+			</div>
+		</div>
+	</div>

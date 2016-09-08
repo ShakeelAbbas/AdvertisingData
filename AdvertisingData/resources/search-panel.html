@@ -1,0 +1,11 @@
+<span style="font-weight: bold; margin-left: 10px" id="start-date-label"> Start Date:</span>
+<span style="margin-left: 10px">
+	<input type="text" id="startDate" ng-model="apiDates.startDate" class="dates-input" placeholder="Start Date" title="Start Date" />
+</span>
+<span style="margin-left: 20px; font-weight: bold;" class="end-date-label"> End Date:</span>
+<span style="margin-left: 10px" class="end-date-input">
+	<input type="text" id="endDate" ng-model="apiDates.endDate" class="dates-input" placeholder="End Date" title="End Date" />
+</span>
+<span style="margin-left: 37px" ng-init="initializePikadayStartEndDate()">
+	<button class="btn btn-primary" ng-click="filterResultsBydate();" type="button">Search</button>
+</span>
